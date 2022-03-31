@@ -1,5 +1,6 @@
 FROM openjdk:8-jdk-alpine
 ARG JAR_FILE=target/*.jar
+#need to use docker.host.internal as localhost is not available inside container
 ENV SPRING_DATASOURCE_URL="jdbc:postgresql://host.docker.internal:5432/postgres" \
     SPRING_DATASOURCE_USERNAME="postgres" \
     SPRING_DATASOURCE_PASSWORD="admin" \
